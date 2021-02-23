@@ -1,0 +1,18 @@
+body {
+  background-color: #666666;
+  font-family: 'Rubik', sans-serif;
+}
+
+header {
+  background-color: #cc0033;
+  color: #F5F5F5;
+}
+
+.header-text {
+  font-size: 30px;
+  padding: 1rem 0;
+}
+
+.header-text > p {
+  margin: auto;
+}
