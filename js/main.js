@@ -25,6 +25,7 @@ function getQuote () {
   xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    $quoteId.innerHTML = '';
     var randomNum = Math.floor(Math.random() * 1643);
     var $response = xhr.response[randomNum];
     var $liText = document.createElement('li');
