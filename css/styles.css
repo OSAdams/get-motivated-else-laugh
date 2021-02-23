@@ -5,6 +5,7 @@
 body {
   background-color: #B0B7BC;
   font-family: 'Rubik', sans-serif;
+  margin: auto;
 }
 
 header {
@@ -17,6 +18,10 @@ header {
   padding: 1rem 0;
   width: 100%;
   height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .header-text > p {
@@ -25,13 +30,14 @@ header {
 
 .logo {
   padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-image {
   width: 70%;
   height: 300px;
-  border-radius: 15px;
-  box-shadow: 0px 3px rgba(0, 0, 0, 0.158);
 }
 
 .motivate-quotes {
@@ -62,9 +68,19 @@ header {
   height: 66px;
   position: fixed;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 i {
   font-size: 30px;
   color: #F5F5F5;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
