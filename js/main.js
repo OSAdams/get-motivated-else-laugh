@@ -10,10 +10,10 @@ var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 
 $motivateButton.addEventListener('click', function(event) {
-  $logo.setAttribute('class', 'logo hidden');
-  // if () {
+  if ($logo.getAttribute('class') === 'logo') {
     gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
-    // }
+    }
+  $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes');
@@ -22,7 +22,7 @@ $motivateButton.addEventListener('click', function(event) {
 
 function getQuote () {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://type.fit/api/quotes");
+  xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var randomNum = Math.floor(Math.random() * 1643);
