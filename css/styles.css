@@ -45,6 +45,13 @@ header {
   margin-bottom: 22px;
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
 .motivate-quotes,
 .dad-jokes {
   width: 232px;
@@ -74,16 +81,11 @@ header {
 }
 
 i {
-  font-size: 30px;
+  font-size: 40px;
   color: #F5F5F5;
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+
 
 .quotes-or-jokes {
   margin: auto;

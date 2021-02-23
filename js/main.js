@@ -16,3 +16,7 @@ $motivateButton.addEventListener('click', function(event) {
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes');
 });
+
+// function getQuote () {
+
+// };
