@@ -11,6 +11,7 @@ var $textContainer = document.querySelector('#quotes-or-jokes')
 
 $motivateButton.addEventListener('click', function(event) {
   $logo.setAttribute('class', 'logo hidden');
+  gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes');
