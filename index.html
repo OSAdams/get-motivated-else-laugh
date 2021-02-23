@@ -4,15 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
+    <div class="header-text" id="header-text">
+      <p>Get Motivated</p>
+      <p>else Laugh</p>
+    </div>
   </header>
   <main>
+    <div name="logo" class="logo" id="logo">
+      <img src="images/clickYourFlavor.png" alt="Tea Cup" class="logo-image" id="logo-image">
+    </div>
+    <div name="quotesOrJokes" class="quotes-or-jokes" id="quotes-or-jokes">
+      <ul class="quotes" id="quotes">
+
+      </ul>
+      <ul class="jokes" id="jokes">
+
+      </ul>
+    </div>
+    <div name="buttons" class="buttons" id="buttons">
+      <button name="motivation" class="motivate-quotes" id="motivate-quotes">Motivate</button>
+      <button name="dadJokes" class="dad-jokes" id="dad-jokes">Laugh</button>
+    </div>
   </main>
+  <nav>
+    <div name="navigation" class="navigation" id="navigation">
+      <i name="home" class="fas fa-home" id="home"></i>
+      <i name="favoriteQuotes" class="fas fa-quote-right" id="favorite-quotes"></i>
+      <i name="favoriteJokes" class="fas fa-laugh-beam" id="favorite-jokes"></i>
+    </div>
+  </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
