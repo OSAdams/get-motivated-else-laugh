@@ -10,6 +10,7 @@ var $quoteId = document.querySelector('#quotes');
 var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var quotesArray = [];
+var jokesArray = [];
 
 getQuote();
 
@@ -42,6 +43,8 @@ function getQuote () {
   xhr.send();
 };
 
+getJokes();
+
 $laughButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
     gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
@@ -50,4 +53,22 @@ $laughButton.addEventListener('click', function(event) {
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes');
   $quoteId.setAttribute('class', 'quotes hidden');
+  $jokeId.innerHTML = '';
+  var randomNum = Math.floor(Math.random() * jokesArray.length);
+  var randomJoke = jokesArray[randomNum];
+  var $liText = document.createElement('li');
+  $liText.textContent = randomJoke;
+  $jokeId.appendChild($liText);
 });
+
+function getJokes () {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://api.icndb.com/jokes/')
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function() {
+    for (var i = 0; i < xhr.response.value.length; i++) {
+      jokesArray.push(xhr.response.value[i].joke);
+    }
+  });
+  xhr.send();
+}
