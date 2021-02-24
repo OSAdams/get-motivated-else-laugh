@@ -2,3 +2,41 @@ gsap.from(".logo-image", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
 gsap.from(".motivate-quotes", {duration: 0.75, opacity: 0, x: -250});
 gsap.from(".dad-jokes", {duration: 1, opacity: 0, x: -250});
 gsap.from(".fas", {duration: 1.5, opacity: 0, y: 150, stagger: 0.25});
+
+var $motivateButton = document.querySelector('#motivate-quotes');
+var $logo = document.querySelector('#logo');
+var $quoteId = document.querySelector('#quotes');
+var $jokeId = document.querySelector('#jokes');
+var $textContainer = document.querySelector('#quotes-or-jokes')
+var quotesArray = [];
+
+getQuote();
+
+$motivateButton.addEventListener('click', function(event) {
+  if ($logo.getAttribute('class') === 'logo') {
+    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
+    }
+  $logo.setAttribute('class', 'logo hidden');
+  $textContainer.setAttribute('class', 'quotes-or-jokes');
+  $jokeId.setAttribute('class', 'jokes hidden');
+  $quoteId.setAttribute('class', 'quotes');
+  $quoteId.innerHTML = '';
+  var randomNum = Math.floor(Math.random() * quotesArray.length);
+  var randomQuote = quotesArray[randomNum];
+  var $liText = document.createElement('li');
+  $liText.textContent = randomQuote.text;
+  $quoteId.appendChild($liText);
+  var $liAuthor = document.createElement('li');
+  $liAuthor.textContent = randomQuote.author;
+  $quoteId.appendChild($liAuthor);
+});
+
+function getQuote () {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://type.fit/api/quotes');
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+      quotesArray = xhr.response;
+    });
+  xhr.send();
+};
