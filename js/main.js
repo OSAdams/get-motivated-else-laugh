@@ -73,9 +73,9 @@ function getJokes () {
 
 $home.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo hidden') {
-    $logo.setAttribute('class', 'logo');
     gsap.from(".logo-image", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
   }
+  $logo.setAttribute('class', 'logo');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes hidden');
