@@ -11,6 +11,7 @@ var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var $home = document.querySelector('#home');
 var $favoritedTexts = document.querySelector('#favorited-texts');
+var $quoteSave = document.querySelector('#quote-save');
 var quotesArray = [];
 var jokesValue = null;
 
@@ -25,6 +26,7 @@ $motivateButton.addEventListener('click', function(event) {
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes');
+  $quoteSave.setAttribute('class', 'fas fa-star');
   $quoteId.innerHTML = '';
   var randomNum = Math.floor(Math.random() * quotesArray.length);
   var randomQuote = quotesArray[randomNum];
@@ -81,4 +83,5 @@ $home.addEventListener('click', function(event) {
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes hidden');
+  $quoteSave.setAttribute('class', 'fas fa-star hidden');
 });
