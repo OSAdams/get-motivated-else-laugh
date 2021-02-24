@@ -13,6 +13,7 @@ var quotesArray = [];
 var jokesValue = null;
 
 getQuote();
+getJokes();
 
 $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
@@ -42,8 +43,6 @@ function getQuote () {
     });
   xhr.send();
 };
-
-getJokes();
 
 $laughButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
