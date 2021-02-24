@@ -4,13 +4,16 @@ gsap.from(".dad-jokes", {duration: 1, opacity: 0, x: -250});
 gsap.from(".fas", {duration: 1.5, opacity: 0, y: 150, stagger: 0.25});
 
 var $motivateButton = document.querySelector('#motivate-quotes');
+var $laughButton = document.querySelector('#dad-jokes');
 var $logo = document.querySelector('#logo');
 var $quoteId = document.querySelector('#quotes');
 var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var quotesArray = [];
+var jokesValue = null;
 
 getQuote();
+getJokes();
 
 $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
@@ -40,3 +43,29 @@ function getQuote () {
     });
   xhr.send();
 };
+
+$laughButton.addEventListener('click', function(event) {
+  if ($logo.getAttribute('class') === 'logo') {
+    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
+  }
+  $logo.setAttribute('class', 'logo hidden');
+  $textContainer.setAttribute('class', 'quotes-or-jokes');
+  $jokeId.setAttribute('class', 'jokes');
+  $quoteId.setAttribute('class', 'quotes hidden');
+  $jokeId.innerHTML = '';
+  var $liText = document.createElement('li');
+  $liText.textContent = jokesValue;
+  $jokeId.appendChild($liText);
+  getJokes();
+});
+
+function getJokes () {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://icanhazdadjoke.com/');
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function() {
+    jokesValue = xhr.response.joke;
+  });
+  xhr.send();
+}
