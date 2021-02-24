@@ -10,6 +10,7 @@ var $quoteId = document.querySelector('#quotes');
 var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var $home = document.querySelector('#home');
+var $favoritedTexts = document.querySelector('#favorited-texts');
 var quotesArray = [];
 var jokesValue = null;
 
@@ -75,6 +76,7 @@ $home.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo hidden') {
     gsap.from(".logo-image", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
   }
+  $favoritedTexts.setAttribute('class', 'favorited-texts hidden')
   $logo.setAttribute('class', 'logo');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $jokeId.setAttribute('class', 'jokes hidden');
