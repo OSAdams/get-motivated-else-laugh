@@ -10,7 +10,7 @@ var $quoteId = document.querySelector('#quotes');
 var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var quotesArray = [];
-var jokesArray = [];
+var jokesValue = null;
 
 getQuote();
 
@@ -54,21 +54,19 @@ $laughButton.addEventListener('click', function(event) {
   $jokeId.setAttribute('class', 'jokes');
   $quoteId.setAttribute('class', 'quotes hidden');
   $jokeId.innerHTML = '';
-  var randomNum = Math.floor(Math.random() * jokesArray.length);
-  var randomJoke = jokesArray[randomNum];
   var $liText = document.createElement('li');
-  $liText.textContent = randomJoke;
+  $liText.textContent = jokesValue;
   $jokeId.appendChild($liText);
+  getJokes();
 });
 
 function getJokes () {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.icndb.com/jokes/')
+  xhr.open('GET', 'https://icanhazdadjoke.com/');
+  xhr.setRequestHeader('Accept', 'application/json');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function() {
-    for (var i = 0; i < xhr.response.value.length; i++) {
-      jokesArray.push(xhr.response.value[i].joke);
-    }
+    jokesValue = xhr.response.joke;
   });
   xhr.send();
 }
