@@ -115,13 +115,15 @@ $quoteSave.addEventListener('click', function (event) {
   });
 });
 
-// function postQuotes () {
-//   for (var i = 0; i < quoteData.length; i++) {
-//     $liText = document.createElement('li');
-//     $liText.textContent = quoteData[i].quote;
-//     $favoriteQuotes.appendChild('"' + $liText + '"');
-//     $liAuthor = document.createElement('li');
-//     $liAuthor.textContent = quoteData[i].author;
-//     $favoriteQuotes.appendChild('-', $liAuthor);
-//   }
-// };
+function postQuotes () {
+  for (var i = 0; i < quoteData.length; i++) {
+    $liText = document.createElement('li');
+    var pullText = '"' + quoteData[i].quote + '"';
+    $liText.textContent = pullText;
+    $favoriteQuotes.appendChild($liText);
+    $liAuthor = document.createElement('li');
+    var pullAuthor = '- ' + quoteData[i].author;
+    $liAuthor.textContent = pullAuthor;
+    $favoriteQuotes.appendChild($liAuthor);
+  }
+};
