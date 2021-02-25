@@ -12,7 +12,9 @@ var $textContainer = document.querySelector('#quotes-or-jokes')
 var $home = document.querySelector('#home');
 var $favoritedTexts = document.querySelector('#favorited-texts');
 var $favoriteQuotes = document.querySelector('#favorite-quotes');
+var $favoriteJokes = document.querySelector('#favorite-jokes');
 var $savedQuotes = document.querySelector('#saved-quotes');
+var $savedJokes = document.querySelector('#saved-jokes');
 var $quoteSave = document.querySelector('#quote-save');
 var $jokeSave = document.querySelector('#joke-save');
 var $buttons = document.querySelector('#buttons');
@@ -123,7 +125,7 @@ $savedQuotes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
     gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
   }
-  if ($hdTop.textContent !== 'Favorited' && $hdBot.textcontent !== 'Quotes') {
+  if ($hdBot.textcontent !== 'Quotes') {
     $hdTop.textContent = 'Favorited';
     $hdBot.textContent = 'Quotes';
   }
@@ -131,8 +133,26 @@ $savedQuotes.addEventListener('click', function (event) {
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quote-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
+  $favoriteJokes.setAttribute('class', 'favorite-jokes hidden');
+  $favoriteQuotes.setAttribute('class', 'favorite-quotes');
   $favoriteQuotes.innerHTML = '';
   postQuotes();
+});
+
+$savedJokes.addEventListener('click', function (event) {
+  if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
+    gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+  }
+  if ($hdBot.textContent !== 'Jokes') {
+    $hdTop.textContent = 'Favorited';
+    $hdBot.textContent = 'Jokes';
+  }
+  $favoritedTexts.setAttribute('class', 'favorited-texts');
+  $logo.setAttribute('class', 'logo hidden');
+  $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
+  $buttons.setAttribute('class', 'buttons hidden');
+  $favoriteQuotes.setAttribute('class', 'favorite-quotes hidden');
+  $favoriteJokes.setAttribute('class', 'favorite-jokes');
 });
 
 $quoteSave.addEventListener('click', function (event) {
