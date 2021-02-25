@@ -82,6 +82,7 @@ $laughButton.addEventListener('click', function(event) {
   $jokeSave.setAttribute('class', 'fas fa-star');
   $jokeId.innerHTML = '';
   var $liText = document.createElement('li');
+  $liText.setAttribute('id', 'joke-value');
   $liText.textContent = jokesValue;
   $jokeId.appendChild($liText);
   getJokes();
@@ -141,6 +142,11 @@ $quoteSave.addEventListener('click', function (event) {
     'quote': quoteText.textContent,
     'author': quoteAuthor.textContent
   });
+});
+
+$jokeSave.addEventListener('click', function (event) {
+  var $jokeText = document.querySelector('#joke-value');
+  jokeData.push($jokeText.textContent);
 });
 
 function postQuotes () {
