@@ -61,7 +61,7 @@ header {
   outline: none;
   border: none;
   background-color: #F5F5F5;
-  box-shadow: 0px 3px rgba(0, 0, 0, 0.158);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.158);
 }
 
 .motivate-quotes:active,
@@ -87,16 +87,17 @@ i {
 }
 
 .fa-star {
-  text-shadow: 0px 3px rgba(0, 0, 0, 0.158);
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.158);
 }
 
-.quotes-or-jokes {
+.quotes-or-jokes,
+.favorited-texts {
   margin: auto;
   width: 80%;
   height: 260px;
   background-color: #F5F5F5;
   border-radius: 15px;
-  box-shadow: 0px 3px rgba(0, 0, 0, 0.158);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.158);
   margin-bottom: 1.55rem;
 }
 
@@ -108,4 +109,10 @@ ul {
 li {
   padding-top: 15px;
   padding-right: 25px;
+}
+
+.favorited-texts {
+  width: 80%;
+  height: 490px;
+  margin-bottom: 0rem;
 }

@@ -1,7 +1,7 @@
-gsap.from(".logo-image", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
-gsap.from(".motivate-quotes", {duration: 0.75, opacity: 0, x: -250});
-gsap.from(".dad-jokes", {duration: 1, opacity: 0, x: -250});
-gsap.from(".fas", {duration: 1.1, opacity: 0, y: 150, stagger: 0.25});
+gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+gsap.from('.motivate-quotes', {duration: 0.75, opacity: 0, x: -250});
+gsap.from('.dad-jokes', {duration: 1, opacity: 0, x: -250});
+gsap.from('.fas', {duration: 1.1, opacity: 0, y: 150, stagger: 0.25});
 
 var $motivateButton = document.querySelector('#motivate-quotes');
 var $laughButton = document.querySelector('#dad-jokes');
@@ -11,16 +11,20 @@ var $jokeId = document.querySelector('#jokes');
 var $textContainer = document.querySelector('#quotes-or-jokes')
 var $home = document.querySelector('#home');
 var $favoritedTexts = document.querySelector('#favorited-texts');
+var $favoriteQuotes = document.querySelector('#favorite-quotes');
+var $savedQuotes = document.querySelector('#saved-quotes');
 var $quoteSave = document.querySelector('#quote-save');
+var $buttons = document.querySelector('#buttons');
 var quotesArray = [];
 var jokesValue = null;
 
 getQuote();
 getJokes();
+postQuotes();
 
 $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
+    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
     }
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quotes-or-jokes');
@@ -53,7 +57,7 @@ function getQuote () {
 
 $laughButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
+    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
   }
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quotes-or-jokes');
@@ -79,14 +83,27 @@ function getJokes () {
 
 $home.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo hidden') {
-    gsap.from(".logo-image", {duration: 1.5, opacity: 0, scale: 0.3, ease: "back"});
+    gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
   }
-  $favoritedTexts.setAttribute('class', 'favorited-texts hidden')
+  if ($buttons.getAttribute('class') === 'buttons hidden') {
+    gsap.from('.motivate-quotes', {duration: 0.75, opacity: 0, x: -250});
+    gsap.from('.dad-jokes', {duration: 1, opacity: 0, x: -250});
+  }
+  $favoritedTexts.setAttribute('class', 'favorited-texts hidden');
   $logo.setAttribute('class', 'logo');
+  $buttons.setAttribute('class', 'buttons');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
-  $jokeId.setAttribute('class', 'jokes hidden');
-  $quoteId.setAttribute('class', 'quotes hidden');
   $quoteSave.setAttribute('class', 'fas fa-star hidden');
+});
+
+$savedQuotes.addEventListener('click', function (event) {
+  if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
+    gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+  }
+  $favoritedTexts.setAttribute('class', 'favorited-texts');
+  $logo.setAttribute('class', 'logo hidden');
+  $textContainer.setAttribute('class', 'quote-or-jokes hidden');
+  $buttons.setAttribute('class', 'buttons hidden');
 });
 
 $quoteSave.addEventListener('click', function (event) {
@@ -97,3 +114,14 @@ $quoteSave.addEventListener('click', function (event) {
     'author': quoteAuthor.textContent
   });
 });
+
+// function postQuotes () {
+//   for (var i = 0; i < quoteData.length; i++) {
+//     $liText = document.createElement('li');
+//     $liText.textContent = quoteData[i].quote;
+//     $favoriteQuotes.appendChild('"' + $liText + '"');
+//     $liAuthor = document.createElement('li');
+//     $liAuthor.textContent = quoteData[i].author;
+//     $favoriteQuotes.appendChild('-', $liAuthor);
+//   }
+// };
