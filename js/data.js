@@ -1,6 +1,6 @@
 /* exported data */
 var quoteData = [];
-var quoteStorage = localStorage.getItem('motivate-or-laugh');
+var quoteStorage = localStorage.getItem('motivate');
 
 if (quoteStorage !== null) {
   quoteData = JSON.parse(quoteStorage);
@@ -8,5 +8,5 @@ if (quoteStorage !== null) {
 
 window.addEventListener('beforeunload', function (event) {
   var quoteJSON = JSON.stringify(quoteData);
-  localStorage.setItem('motivate-or-laugh', quoteJSON);
+  localStorage.setItem('motivate', quoteJSON);
 });

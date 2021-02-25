@@ -15,12 +15,12 @@ var $favoriteQuotes = document.querySelector('#favorite-quotes');
 var $savedQuotes = document.querySelector('#saved-quotes');
 var $quoteSave = document.querySelector('#quote-save');
 var $buttons = document.querySelector('#buttons');
+var $headerText = document.querySelector('#header-text');
 var quotesArray = [];
 var jokesValue = null;
 
 getQuote();
 getJokes();
-postQuotes();
 
 $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
@@ -36,12 +36,15 @@ $motivateButton.addEventListener('click', function(event) {
   var randomQuote = quotesArray[randomNum];
   var $liText = document.createElement('li');
   $liText.setAttribute('class', 'quote-text-value');
-  $liText.textContent = randomQuote.body;
+  var quoteText = '"' + randomQuote.body + '"';
+  $liText.textContent = quoteText;
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
   $liAuthor.setAttribute('class', 'quote-author-value')
-  $liAuthor.textContent = randomQuote.author;
+  var quoteAuthor = '- ' + randomQuote.author;
+  $liAuthor.textContent = quoteAuthor;
   $quoteId.appendChild($liAuthor);
+  return;
 });
 
 function getQuote () {
@@ -104,6 +107,8 @@ $savedQuotes.addEventListener('click', function (event) {
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quote-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
+  $favoriteQuotes.innerHTML = '';
+  postQuotes();
 });
 
 $quoteSave.addEventListener('click', function (event) {
@@ -118,12 +123,10 @@ $quoteSave.addEventListener('click', function (event) {
 function postQuotes () {
   for (var i = 0; i < quoteData.length; i++) {
     $liText = document.createElement('li');
-    var pullText = '"' + quoteData[i].quote + '"';
-    $liText.textContent = pullText;
+    $liText.textContent = quoteData[i].quote;
     $favoriteQuotes.appendChild($liText);
     $liAuthor = document.createElement('li');
-    var pullAuthor = '- ' + quoteData[i].author;
-    $liAuthor.textContent = pullAuthor;
+    $liAuthor.textContent = quoteData[i].author;
     $favoriteQuotes.appendChild($liAuthor);
   }
 };
