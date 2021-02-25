@@ -92,5 +92,8 @@ $home.addEventListener('click', function(event) {
 $quoteSave.addEventListener('click', function (event) {
   var quoteText = document.querySelector('.quote-text-value');
   var quoteAuthor = document.querySelector('.quote-author-value');
-  quoteData.push({'quote': quoteText.textContent, 'author': quoteAuthor.textContent})
+  quoteData.push({
+    'quote': quoteText.textContent,
+    'author': quoteAuthor.textContent
+  });
 });
