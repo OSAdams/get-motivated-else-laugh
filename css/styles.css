@@ -114,5 +114,7 @@ li {
 .favorited-texts {
   width: 80%;
   height: 490px;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  overflow-y: scroll;
 }
