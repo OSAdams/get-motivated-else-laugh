@@ -14,6 +14,7 @@ var $favoritedTexts = document.querySelector('#favorited-texts');
 var $favoriteQuotes = document.querySelector('#favorite-quotes');
 var $savedQuotes = document.querySelector('#saved-quotes');
 var $quoteSave = document.querySelector('#quote-save');
+var $jokeSave = document.querySelector('#joke-save');
 var $buttons = document.querySelector('#buttons');
 var $headerText = document.querySelector('#header-text');
 var $hdTop = document.querySelector('#hd-top');
@@ -37,6 +38,7 @@ $motivateButton.addEventListener('click', function(event) {
   $jokeId.setAttribute('class', 'jokes hidden');
   $quoteId.setAttribute('class', 'quotes');
   $quoteSave.setAttribute('class', 'fas fa-star');
+  $jokeSave.setAttribute('class', 'fas fa-star hidden');
   $quoteId.innerHTML = '';
   var randomNum = Math.floor(Math.random() * quotesArray.length);
   var randomQuote = quotesArray[randomNum];
@@ -76,6 +78,8 @@ $laughButton.addEventListener('click', function(event) {
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes');
   $quoteId.setAttribute('class', 'quotes hidden');
+  $quoteSave.setAttribute('class', 'fas fa-start hidden');
+  $jokeSave.setAttribute('class', 'fas fa-star');
   $jokeId.innerHTML = '';
   var $liText = document.createElement('li');
   $liText.textContent = jokesValue;
@@ -111,6 +115,7 @@ $home.addEventListener('click', function(event) {
   $buttons.setAttribute('class', 'buttons');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $quoteSave.setAttribute('class', 'fas fa-star hidden');
+  $jokeSave.setAttribute('class', 'fas fa-star hidden');
 });
 
 $savedQuotes.addEventListener('click', function (event) {
