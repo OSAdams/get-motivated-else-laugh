@@ -16,6 +16,8 @@ var $savedQuotes = document.querySelector('#saved-quotes');
 var $quoteSave = document.querySelector('#quote-save');
 var $buttons = document.querySelector('#buttons');
 var $headerText = document.querySelector('#header-text');
+var $hdTop = document.querySelector('#hd-top');
+var $hdBot = document.querySelector('#hd-bot');
 var quotesArray = [];
 var jokesValue = null;
 
@@ -26,6 +28,10 @@ $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
     gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
     }
+  if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
+    $hdTop.textContent = 'Get Motivated';
+    $hdBot.textContent = 'else Laugh';
+  }
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes hidden');
@@ -62,6 +68,10 @@ $laughButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
     gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
   }
+  if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
+    $hdTop.textContent = 'Get Motivated';
+    $hdBot.textContent = 'else Laugh';
+  }
   $logo.setAttribute('class', 'logo hidden');
   $textContainer.setAttribute('class', 'quotes-or-jokes');
   $jokeId.setAttribute('class', 'jokes');
@@ -92,6 +102,10 @@ $home.addEventListener('click', function(event) {
     gsap.from('.motivate-quotes', {duration: 0.75, opacity: 0, x: -250});
     gsap.from('.dad-jokes', {duration: 1, opacity: 0, x: -250});
   }
+  if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
+    $hdTop.textContent = 'Get Motivated';
+    $hdBot.textContent = 'else Laugh';
+  }
   $favoritedTexts.setAttribute('class', 'favorited-texts hidden');
   $logo.setAttribute('class', 'logo');
   $buttons.setAttribute('class', 'buttons');
@@ -102,6 +116,10 @@ $home.addEventListener('click', function(event) {
 $savedQuotes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
     gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+  }
+  if ($hdTop.textContent !== 'Favorited' && $hdBot.textcontent !== 'Quotes') {
+    $hdTop.textContent = 'Favorited';
+    $hdBot.textContent = 'Quotes';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts');
   $logo.setAttribute('class', 'logo hidden');
