@@ -54,7 +54,6 @@ $motivateButton.addEventListener('click', function(event) {
   var quoteAuthor = '- ' + randomQuote.author;
   $liAuthor.textContent = quoteAuthor;
   $quoteId.appendChild($liAuthor);
-  return;
 });
 
 function getQuote () {
@@ -83,10 +82,10 @@ $laughButton.addEventListener('click', function(event) {
   $quoteSave.setAttribute('class', 'fas fa-start hidden');
   $jokeSave.setAttribute('class', 'fas fa-star');
   $jokeId.innerHTML = '';
-  var $liText = document.createElement('li');
-  $liText.setAttribute('id', 'joke-value');
-  $liText.textContent = jokesValue;
-  $jokeId.appendChild($liText);
+  var $liJokeText = document.createElement('li');
+  $liJokeText.setAttribute('id', 'joke-value');
+  $liJokeText.textContent = jokesValue;
+  $jokeId.appendChild($liJokeText);
   getJokes();
 });
 
@@ -139,21 +138,23 @@ $savedQuotes.addEventListener('click', function (event) {
   postQuotes();
 });
 
-$savedJokes.addEventListener('click', function (event) {
-  if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
-    gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
-  }
-  if ($hdBot.textContent !== 'Jokes') {
-    $hdTop.textContent = 'Favorited';
-    $hdBot.textContent = 'Jokes';
-  }
-  $favoritedTexts.setAttribute('class', 'favorited-texts');
-  $logo.setAttribute('class', 'logo hidden');
-  $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
-  $buttons.setAttribute('class', 'buttons hidden');
-  $favoriteQuotes.setAttribute('class', 'favorite-quotes hidden');
-  $favoriteJokes.setAttribute('class', 'favorite-jokes');
-});
+// $savedJokes.addEventListener('click', function (event) {
+//   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
+//     gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+//   }
+//   if ($hdBot.textContent !== 'Jokes') {
+//     $hdTop.textContent = 'Favorited';
+//     $hdBot.textContent = 'Jokes';
+//   }
+//   $favoritedTexts.setAttribute('class', 'favorited-texts');
+//   $logo.setAttribute('class', 'logo hidden');
+//   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
+//   $buttons.setAttribute('class', 'buttons hidden');
+//   $favoriteQuotes.setAttribute('class', 'favorite-quotes hidden');
+//   $favoriteJokes.setAttribute('class', 'favorite-jokes');
+//   $favoriteJokes.innerHTML = '';
+//   postJokes();
+// });
 
 $quoteSave.addEventListener('click', function (event) {
   var quoteText = document.querySelector('.quote-text-value');
@@ -164,18 +165,26 @@ $quoteSave.addEventListener('click', function (event) {
   });
 });
 
-$jokeSave.addEventListener('click', function (event) {
-  var $jokeText = document.querySelector('#joke-value');
-  jokeData.push($jokeText.textContent);
-});
+// $jokeSave.addEventListener('click', function (event) {
+//   var $jokeText = document.querySelector('#joke-value');
+//   jokeData.push($jokeText.textContent);
+// });
+
+// function postJokes () {
+//   for (var i = 0; i < jokeData.length; i++) {
+//     var $liJoke = document.createElement('li');
+//     $liJoke.textContent = jokeData[i];
+//     $favoriteJokes.appendChild($liJoke);
+//   }
+// }
 
 function postQuotes () {
   for (var i = 0; i < quoteData.length; i++) {
-    $liText = document.createElement('li');
-    $liText.textContent = quoteData[i].quote;
-    $favoriteQuotes.appendChild($liText);
-    $liAuthor = document.createElement('li');
-    $liAuthor.textContent = quoteData[i].author;
-    $favoriteQuotes.appendChild($liAuthor);
+    var $liTextValue = document.createElement('li');
+    $liTextValue.textContent = quoteData[i].quote;
+    $favoriteQuotes.appendChild($liTextValue);
+    var $liAuthorValue = document.createElement('li');
+    $liAuthorValue.textContent = quoteData[i].author;
+    $favoriteQuotes.appendChild($liAuthorValue);
   }
 };
