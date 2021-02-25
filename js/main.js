@@ -89,6 +89,8 @@ $home.addEventListener('click', function(event) {
   $quoteSave.setAttribute('class', 'fas fa-star hidden');
 });
 
-// $quoteSave.addEventListener('click', function (event) {
-//   quoteData.push($quoteId.textContent);
-// });
+$quoteSave.addEventListener('click', function (event) {
+  var quoteText = document.querySelector('.quote-text-value');
+  var quoteAuthor = document.querySelector('.quote-author-value');
+  quoteData.push({'quote': quoteText.textContent, 'author': quoteAuthor.textContent})
+});
