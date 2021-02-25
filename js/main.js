@@ -31,9 +31,11 @@ $motivateButton.addEventListener('click', function(event) {
   var randomNum = Math.floor(Math.random() * quotesArray.length);
   var randomQuote = quotesArray[randomNum];
   var $liText = document.createElement('li');
+  $liText.setAttribute('class', 'quote-text-value');
   $liText.textContent = randomQuote.body;
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
+  $liAuthor.setAttribute('class', 'quote-author-value')
   $liAuthor.textContent = randomQuote.author;
   $quoteId.appendChild($liAuthor);
 });
@@ -86,3 +88,7 @@ $home.addEventListener('click', function(event) {
   $quoteId.setAttribute('class', 'quotes hidden');
   $quoteSave.setAttribute('class', 'fas fa-star hidden');
 });
+
+// $quoteSave.addEventListener('click', function (event) {
+//   quoteData.push($quoteId.textContent);
+// });
