@@ -16,9 +16,6 @@ if (jokeStorage !== null) {
 window.addEventListener('beforeunload', function (event) {
   var quoteJSON = JSON.stringify(quoteData);
   localStorage.setItem('saved-motivational-quotes', quoteJSON);
-});
-
-window.addEventListener('beforeunload', function (event) {
   var jokeJSON = JSON.stringify(jokeData);
   localStorage.setItem('saved-dad-jokes', jokeJSON);
 });
