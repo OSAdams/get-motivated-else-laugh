@@ -1,0 +1,46 @@
+@media screen and (min-width: 600px) and (max-width: 667px) {
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: flex-end;
+  }
+
+  header {
+    width: 50%;
+    height: 76px;
+    background: linear-gradient(to right, #B0B7BC, #cc0033);
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  header > .header-text {
+    -webkit-text-stroke: 1px black;
+    font-weight: 500;
+  }
+
+  nav > .navigation {
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, #B0B7BC, #cc0033);
+    -webkit-text-stroke: 1px black;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .logo {
+    padding: 0;
+    position: fixed;
+    left: 2rem;
+    top: 1rem;
+  }
+
+  .buttons {
+    position: fixed;
+    right: 3rem;
+    bottom: 5rem;
+  }
+}
