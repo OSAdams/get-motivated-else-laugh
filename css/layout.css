@@ -43,4 +43,13 @@
     right: 3rem;
     bottom: 5rem;
   }
+
+  main > .quotes-or-jokes {
+    width: 40%;
+    height: 300px;
+    position: fixed;
+    left: 2rem;
+    top: 2.3rem;
+    overyflow-y: scroll;
+  }
 }
