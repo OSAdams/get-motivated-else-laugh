@@ -60,4 +60,12 @@
     left: 2rem;
     top: 1.3rem;
   }
+
+  .logo-image-two {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    height: 220px;
+    width: 165px;
+  }
 }
