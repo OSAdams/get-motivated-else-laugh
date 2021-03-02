@@ -21,6 +21,7 @@ var $hdTop = document.querySelector('#hd-top');
 var $hdBot = document.querySelector('#hd-bot');
 var $logoImg = document.querySelector('#logo-image');
 var $logoImgTwo = document.querySelector('#logo-image-two');
+var quoteAuthor = null;
 var quotesArray = [];
 var jokesValue = null;
 
@@ -51,7 +52,11 @@ $motivateButton.addEventListener('click', function(event) {
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
   $liAuthor.setAttribute('class', 'quote-author-value')
-  var quoteAuthor = '- ' + randomQuote.author;
+  if (randomQuote.author == null) {
+    quoteAuthor = '- Anonymous';
+  } else {
+    quoteAuthor = '- ' + randomQuote.author;
+  }
   $liAuthor.textContent = quoteAuthor;
   $quoteId.appendChild($liAuthor);
 });
