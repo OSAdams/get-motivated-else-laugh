@@ -63,7 +63,6 @@ function getQuote () {
   xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    console.log(xhr.response);
     quotesArray = xhr.response;
     });
   xhr.send();
