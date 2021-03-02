@@ -66,6 +66,12 @@ header {
 .dad-jokes:active {
   outline: none;
   border: none;
+  background-color: gold;
+}
+
+.motivate-quotes:hover,
+.dad-jokes:hover {
+  cursor: pointer;
 }
 
 .navigation {
@@ -82,6 +88,14 @@ header {
 i {
   font-size: 40px;
   color: #F5F5F5;
+}
+
+i:active {
+  color: gold;
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 .fa-star {
