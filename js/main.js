@@ -144,6 +144,9 @@ $savedQuotes.addEventListener('click', function (event) {
     $logoImg.setAttribute('class','logo-image hidden');
     $logoImgTwo.setAttribute('class', 'logo-image-two');
   }
+  if (screen.width > 800) {
+    $logo.setAttribute('class', 'logo hidden');
+  }
   $textContainer.setAttribute('class', 'quote-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
   $favoriteJokes.setAttribute('class', 'favorite-jokes hidden');
@@ -171,6 +174,9 @@ $savedJokes.addEventListener('click', function (event) {
     $logo.setAttribute('class', 'logo');
     $logoImg.setAttribute('class', 'logo-image hidden');
     $logoImgTwo.setAttribute('class', 'logo-image-two');
+  }
+  if (screen.width > 800) {
+    $logo.setAttribute('class', 'logo hidden');
   }
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
