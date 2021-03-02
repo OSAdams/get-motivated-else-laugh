@@ -1,0 +1,88 @@
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: flex-end;
+  }
+
+  header {
+    width: 50%;
+    height: 76px;
+    background: linear-gradient(to right, #B0B7BC, #cc0033);
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  header > .header-text {
+    -webkit-text-stroke: 1px black;
+    font-weight: 500;
+  }
+
+  nav > .navigation {
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, #B0B7BC, #cc0033);
+    -webkit-text-stroke: 1px black;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .logo {
+    padding: 0;
+    position: fixed;
+    left: 2rem;
+    top: 1rem;
+  }
+
+  .buttons {
+    position: fixed;
+    right: 3rem;
+    bottom: 5rem;
+  }
+
+  main > .quotes-or-jokes {
+    width: 40%;
+    height: 300px;
+    position: fixed;
+    left: 2rem;
+    top: 2.3rem;
+    overflow-y: scroll;
+  }
+
+  main > .favorited-texts {
+    width: 40%;
+    height: 300px;
+    position: fixed;
+    left: 2rem;
+    top: 1.3rem;
+  }
+
+  .logo-image-two {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    height: 220px;
+    width: 165px;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .logo > .logo-image {
+    width: 400px;
+    height: 335px;
+  }
+
+  main > .quotes-or-jokes {
+    width: 50%;
+    height: 295px;
+  }
+
+  main > .favorited-texts {
+    width: 50%;
+    margin-top: 7rem;
+  }
+}

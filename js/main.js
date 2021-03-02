@@ -1,6 +1,4 @@
 gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
-gsap.from('.motivate-quotes', {duration: 0.75, opacity: 0, x: -250});
-gsap.from('.dad-jokes', {duration: 1, opacity: 0, x: -250});
 gsap.from('.fas', {duration: 1.1, opacity: 0, y: 150, stagger: 0.25});
 
 var $motivateButton = document.querySelector('#motivate-quotes');
@@ -21,6 +19,8 @@ var $buttons = document.querySelector('#buttons');
 var $headerText = document.querySelector('#header-text');
 var $hdTop = document.querySelector('#hd-top');
 var $hdBot = document.querySelector('#hd-bot');
+var $logoImg = document.querySelector('#logo-image');
+var $logoImgTwo = document.querySelector('#logo-image-two');
 var quotesArray = [];
 var jokesValue = null;
 
@@ -46,7 +46,7 @@ $motivateButton.addEventListener('click', function(event) {
   var randomQuote = quotesArray[randomNum];
   var $liText = document.createElement('li');
   $liText.setAttribute('class', 'quote-text-value');
-  var quoteText = '"' + randomQuote.body + '"';
+  var quoteText = '"' + randomQuote.text + '"';
   $liText.textContent = quoteText;
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
@@ -58,11 +58,10 @@ $motivateButton.addEventListener('click', function(event) {
 
 function getQuote () {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://favqs.com/api/quotes');
-  xhr.setRequestHeader('Authorization', 'Token token=052518e725b1bbb816676aec3fc243d5');
+  xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-      quotesArray = xhr.response.quotes;
+    quotesArray = xhr.response;
     });
   xhr.send();
 };
@@ -101,6 +100,8 @@ function getJokes () {
 }
 
 $home.addEventListener('click', function(event) {
+  $logo.setAttribute('class', 'logo');
+  $logoImg.setAttribute('class', 'logo-image');
   if ($logo.getAttribute('class') === 'logo hidden') {
     gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
   }
@@ -113,7 +114,8 @@ $home.addEventListener('click', function(event) {
     $hdBot.textContent = 'else Laugh';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts hidden');
-  $logo.setAttribute('class', 'logo');
+  gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+  $logoImgTwo.setAttribute('class', 'logo-image-two hidden');
   $buttons.setAttribute('class', 'buttons');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $quoteSave.setAttribute('class', 'fas fa-star hidden');
@@ -129,7 +131,20 @@ $savedQuotes.addEventListener('click', function (event) {
     $hdBot.textContent = 'Quotes';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts');
+  if (screen.width < 600) {
   $logo.setAttribute('class', 'logo hidden');
+  $logoImg.setAttribute('class', 'logo-image hidden');
+  } else if (screen.width > 600) {
+    if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
+    gsap.from('.logo-image-two', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+    }
+    $logo.setAttribute('class', 'logo');
+    $logoImg.setAttribute('class','logo-image hidden');
+    $logoImgTwo.setAttribute('class', 'logo-image-two');
+  }
+  if (screen.width > 800) {
+    $logo.setAttribute('class', 'logo hidden');
+  }
   $textContainer.setAttribute('class', 'quote-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
   $favoriteJokes.setAttribute('class', 'favorite-jokes hidden');
@@ -147,7 +162,20 @@ $savedJokes.addEventListener('click', function (event) {
     $hdBot.textContent = 'Jokes';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts');
+  if (screen.width < 600) {
   $logo.setAttribute('class', 'logo hidden');
+  $logoImg.setAttribute('class', 'logo-image hidden');
+  } else if (screen.width > 600) {
+    if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
+    gsap.from('.logo-image-two', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+    }
+    $logo.setAttribute('class', 'logo');
+    $logoImg.setAttribute('class', 'logo-image hidden');
+    $logoImgTwo.setAttribute('class', 'logo-image-two');
+  }
+  if (screen.width > 800) {
+    $logo.setAttribute('class', 'logo hidden');
+  }
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
   $buttons.setAttribute('class', 'buttons hidden');
   $favoriteQuotes.setAttribute('class', 'favorite-quotes hidden');
