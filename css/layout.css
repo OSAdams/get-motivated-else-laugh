@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) and (max-width: 700px) {
+@media screen and (min-width: 600px) and (max-width: 800px) {
   body {
     display: flex;
     flex-direction: row-reverse;
@@ -68,4 +68,8 @@
     height: 220px;
     width: 165px;
   }
+}
+
+@media screen and (min-width: 801) {
+
 }

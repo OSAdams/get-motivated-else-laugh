@@ -48,7 +48,7 @@ $motivateButton.addEventListener('click', function(event) {
   var randomQuote = quotesArray[randomNum];
   var $liText = document.createElement('li');
   $liText.setAttribute('class', 'quote-text-value');
-  var quoteText = '"' + randomQuote.body + '"';
+  var quoteText = '"' + randomQuote.text + '"';
   $liText.textContent = quoteText;
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
@@ -60,11 +60,11 @@ $motivateButton.addEventListener('click', function(event) {
 
 function getQuote () {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://favqs.com/api/quotes');
-  xhr.setRequestHeader('Authorization', 'Token token=052518e725b1bbb816676aec3fc243d5');
+  xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-      quotesArray = xhr.response.quotes;
+    console.log(xhr.response);
+    quotesArray = xhr.response;
     });
   xhr.send();
 };
