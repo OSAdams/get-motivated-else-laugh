@@ -194,7 +194,7 @@ $quoteSave.addEventListener('click', function (event) {
   var quoteAuthor = document.querySelector('.quote-author-value');
   for (var z = 0; z < quoteData.length; z++) {
     if (quoteText.textContent === quoteData[z].quote) {
-      console.log('Has been saved');
+      alert('This quote has already been favorited!');
       return;
     }
   }
@@ -206,6 +206,15 @@ $quoteSave.addEventListener('click', function (event) {
 
 $jokeSave.addEventListener('click', function (event) {
   var $jokeText = document.querySelector('#joke-value');
+  for (var x = 0; x < jokeData.length; x++) {
+    console.log($jokeText.textContent);
+    console.log(jokeData[x]);
+    if ($jokeText.textContent === jokeData[x]) {
+      console.log('This Joke Has Been Saved');
+      alert('This joke has already been favorited!');
+      return;
+    }
+  }
   jokeData.push($jokeText.textContent);
 });
 
