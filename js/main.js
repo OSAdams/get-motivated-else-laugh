@@ -192,6 +192,12 @@ $savedJokes.addEventListener('click', function (event) {
 $quoteSave.addEventListener('click', function (event) {
   var quoteText = document.querySelector('.quote-text-value');
   var quoteAuthor = document.querySelector('.quote-author-value');
+  for (var z = 0; z < quoteData.length; z++) {
+    if (quoteText.textContent === quoteData[z].quote) {
+      console.log('Has been saved');
+      return;
+    }
+  }
   quoteData.push({
     'quote': quoteText.textContent,
     'author': quoteAuthor.textContent
