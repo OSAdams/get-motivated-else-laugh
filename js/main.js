@@ -21,6 +21,7 @@ var $hdTop = document.querySelector('#hd-top');
 var $hdBot = document.querySelector('#hd-bot');
 var $logoImg = document.querySelector('#logo-image');
 var $logoImgTwo = document.querySelector('#logo-image-two');
+var quoteAuthor = null;
 var quotesArray = [];
 var jokesValue = null;
 
@@ -51,7 +52,11 @@ $motivateButton.addEventListener('click', function(event) {
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
   $liAuthor.setAttribute('class', 'quote-author-value')
-  var quoteAuthor = '- ' + randomQuote.author;
+  if (randomQuote.author == null) {
+    quoteAuthor = '- Anonymous';
+  } else {
+    quoteAuthor = '- ' + randomQuote.author;
+  }
   $liAuthor.textContent = quoteAuthor;
   $quoteId.appendChild($liAuthor);
 });
@@ -187,6 +192,11 @@ $savedJokes.addEventListener('click', function (event) {
 $quoteSave.addEventListener('click', function (event) {
   var quoteText = document.querySelector('.quote-text-value');
   var quoteAuthor = document.querySelector('.quote-author-value');
+  for (var z = 0; z < quoteData.length; z++) {
+    if (quoteText.textContent === quoteData[z].quote) {
+      return;
+    }
+  }
   quoteData.push({
     'quote': quoteText.textContent,
     'author': quoteAuthor.textContent
@@ -195,6 +205,13 @@ $quoteSave.addEventListener('click', function (event) {
 
 $jokeSave.addEventListener('click', function (event) {
   var $jokeText = document.querySelector('#joke-value');
+  for (var x = 0; x < jokeData.length; x++) {
+    console.log($jokeText.textContent);
+    console.log(jokeData[x]);
+    if ($jokeText.textContent === jokeData[x]) {
+      return;
+    }
+  }
   jokeData.push($jokeText.textContent);
 });
 
