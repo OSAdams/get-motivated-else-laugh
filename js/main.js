@@ -194,7 +194,6 @@ $quoteSave.addEventListener('click', function (event) {
   var quoteAuthor = document.querySelector('.quote-author-value');
   for (var z = 0; z < quoteData.length; z++) {
     if (quoteText.textContent === quoteData[z].quote) {
-      alert('This quote has already been favorited!');
       return;
     }
   }
@@ -210,8 +209,6 @@ $jokeSave.addEventListener('click', function (event) {
     console.log($jokeText.textContent);
     console.log(jokeData[x]);
     if ($jokeText.textContent === jokeData[x]) {
-      console.log('This Joke Has Been Saved');
-      alert('This joke has already been favorited!');
       return;
     }
   }
