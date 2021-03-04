@@ -65,10 +65,12 @@ $motivateButton.addEventListener('click', function(event) {
 });
 
 function getQuote () {
+  $loadingModal.setAttribute('class', 'modal');
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://type.fit/api/quotes');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    $loadingModal.setAttribute('class', 'modal hidden');
     quotesArray = xhr.response;
     });
   xhr.send();
