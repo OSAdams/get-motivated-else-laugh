@@ -2,7 +2,18 @@
 
 A dynamic HTML, CSS, and JavaScript solo project.
 
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- jSON
+- API
+
+## Live Demo
+
 https://osadams.github.io/ajax-project/
+
 
 This project enables users to view Motivational Quotes or Dad Jokes. 
 
