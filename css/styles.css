@@ -60,6 +60,7 @@ header {
   border: none;
   background-color: #F5F5F5;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.158);
+  transition: background-color 0.5s;
 }
 
 .motivate-quotes:active,
@@ -67,11 +68,13 @@ header {
   outline: none;
   border: none;
   background-color: gold;
+  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 .motivate-quotes:hover,
 .dad-jokes:hover {
   cursor: pointer;
+  background-color: gold;
 }
 
 .navigation {
@@ -88,18 +91,26 @@ header {
 i {
   font-size: 40px;
   color: #F5F5F5;
-}
-
-i:active {
-  color: gold;
+  transition: color 0.5s;
 }
 
 i:hover {
   cursor: pointer;
+  color: gold;
+}
+
+i:active {
+  color: gold;
+  text-shadow: -5px -5px rgba(0, 0, 0, 0.158);
 }
 
 .fa-star {
   text-shadow: 3px 3px rgba(0, 0, 0, 0.158);
+}
+
+.fa-star:active {
+  padding: 0;
+  text-shadow: -3px -3px rgba(0, 0, 0, 0.158);
 }
 
 .quotes-or-jokes,
