@@ -103,7 +103,7 @@
   }
 }
 
-@media screen and (max-height: 568px) and (max-width: 320px) {
+@media screen and (min-width: 320px) and (min-height: 568px) and (max-width: 320px) and (max-height: 568px) {
   main > .quotes-or-jokes {
     height: 166px;
     overflow-y: scroll;
@@ -121,7 +121,7 @@
   }
 }
 
-@media screen and (max-height: 320px) and (max-width: 568px) {
+@media screen and (min-width: 568px) and (min-height: 320px) and (max-width: 568px) and (max-height: 320px) {
   main > .favorited-texts {
     height: 270px;
     margin-top: 10px;
@@ -147,7 +147,7 @@
   }
 }
 
-@media screen and (max-width: 823px) and (max-height: 411px) {
+@media screen and (min-width: 823px) and (min-height: 411px) and (max-width: 823px) and (max-height: 411px) {
   main > .quotes-or-jokes,
   main > .favorited-texts {
     margin: auto;
@@ -164,5 +164,48 @@
     position: fixed;
     right: 5.5rem;
     bottom: 6.5rem;
+  }
+}
+
+@media screen and (min-width: 667px) and (min-height: 375px) and (max-width: 667px) and (max-height: 375px) {
+  main > .buttons {
+    right: 3rem;
+    bottom: 5rem;
+  }
+
+  main > .quotes-or-jokes {
+    width: 285px;
+    margin: auto;
+  }
+
+  main > .favorited-texts {
+    width: 285px;
+    margin: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 736px) and (min-height: 414px) and (max-width: 736px) and (max-height: 414px) {
+  .logo {
+    margin: auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .buttons {
+    right: 4.2rem;
+  }
+
+  main > .quotes-or-jokes {
+    margin-top: 1.3rem;
+  }
+
+  main > .favorited-texts {
+    margin-top: 2rem;
+  }
+
+  .logo-image-two {
+    right: 6rem;
+    top: 6.5rem;
   }
 }
