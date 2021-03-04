@@ -1,4 +1,6 @@
 gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+gsap.from(".motivate-quotes", {duration: 0.75, opacity: 0, x: -250});
+gsap.from(".dad-jokes", {duration: 1, opacity: 0, x: -250});
 gsap.from('.fas', {duration: 1.1, opacity: 0, y: 150, stagger: 0.25});
 
 var $motivateButton = document.querySelector('#motivate-quotes');
@@ -6,7 +8,7 @@ var $laughButton = document.querySelector('#dad-jokes');
 var $logo = document.querySelector('#logo');
 var $quoteId = document.querySelector('#quotes');
 var $jokeId = document.querySelector('#jokes');
-var $textContainer = document.querySelector('#quotes-or-jokes')
+var $textContainer = document.querySelector('#quotes-or-jokes');
 var $home = document.querySelector('#home');
 var $favoritedTexts = document.querySelector('#favorited-texts');
 var $favoriteQuotes = document.querySelector('#favorite-quotes');
@@ -21,6 +23,7 @@ var $hdTop = document.querySelector('#hd-top');
 var $hdBot = document.querySelector('#hd-bot');
 var $logoImg = document.querySelector('#logo-image');
 var $logoImgTwo = document.querySelector('#logo-image-two');
+var $loadingModal = document.querySelector('#modal');
 var quoteAuthor = null;
 var quotesArray = [];
 var jokesValue = null;
