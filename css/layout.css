@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) and (max-width: 800px) {
+@media screen and (min-width: 568px) and (max-width: 830px) and (max-height: 700px) {
   body {
     display: flex;
     flex-direction: row-reverse;
@@ -33,6 +33,7 @@
 
   .logo {
     padding: 0;
+    padding-top: 2rem;
     position: fixed;
     left: 2rem;
     top: 1rem;
@@ -84,5 +85,149 @@
   main > .favorited-texts {
     width: 50%;
     margin-top: 7rem;
+  }
+}
+
+@media screen and (min-height: 640px) {
+  .logo > .logo-image {
+    height: 285px;
+    width: 220px;
+  }
+
+  main > .quotes-or-jokes {
+    height: 245px;
+  }
+
+  main > .favorited-texts {
+    height: 465px;
+  }
+}
+
+@media screen and (min-width: 320px) and (min-height: 568px) and (max-width: 320px) and (max-height: 568px) {
+  main > .quotes-or-jokes {
+    height: 166px;
+    overflow-y: scroll;
+    margin-top: 10px;
+    padding-top: 0;
+  }
+
+  .logo > .logo-image {
+    width: 135px;
+    height: 200px;
+  }
+
+  main > .favorited-texts {
+    height: 395px;
+  }
+}
+
+@media screen and (min-width: 568px) and (min-height: 320px) and (max-width: 568px) and (max-height: 320px) {
+  main > .favorited-texts {
+    height: 270px;
+    margin-top: 10px;
+  }
+
+  main > .quotes-or-jokes {
+    height: 200px;
+  }
+
+  .logo > .logo-image {
+    width: 185px;
+    height: 240px;
+  }
+
+  .buttons {
+    right: 1rem;
+  }
+
+  .fa-star {
+    position: fixed;
+    left: 7.5rem;
+    bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 823px) and (min-height: 411px) and (max-width: 823px) and (max-height: 411px) {
+  main > .quotes-or-jokes,
+  main > .favorited-texts {
+    margin: auto;
+    margin-top: 1rem;
+    width: 350px;
+    height: 310px;
+  }
+
+  main > .favorited-texts {
+    margin-top: 1.5rem;
+  }
+
+  main > .buttons {
+    position: fixed;
+    right: 5.5rem;
+    bottom: 6.5rem;
+  }
+}
+
+@media screen and (min-width: 667px) and (min-height: 375px) and (max-width: 667px) and (max-height: 375px) {
+  main > .buttons {
+    right: 3rem;
+    bottom: 5rem;
+  }
+
+  main > .quotes-or-jokes {
+    width: 285px;
+    margin: auto;
+  }
+
+  main > .favorited-texts {
+    width: 285px;
+    margin: auto;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 736px) and (min-height: 414px) and (max-width: 736px) and (max-height: 414px) {
+  .logo {
+    margin: auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .buttons {
+    right: 4.2rem;
+  }
+
+  main > .quotes-or-jokes {
+    margin-top: 1.3rem;
+  }
+
+  main > .favorited-texts {
+    margin-top: 2rem;
+  }
+
+  .logo-image-two {
+    right: 6rem;
+    top: 6.5rem;
+  }
+}
+
+@media screen and (min-width: 812px) and (min-height: 375px) and (max-width: 812px) and (max-height: 375px) {
+  .logo > .logo-image {
+    width: 235px;
+    height: 300px;
+    margin-left: 2.5rem;
+  }
+
+  .buttons {
+    right: 5.2rem;
+  }
+
+  main > .quotes-or-jokes {
+    width: 350px;
+  }
+
+  main > .favorited-texts {
+    margin: auto;
+    margin-top: 1rem;
+    width: 350px;
   }
 }
