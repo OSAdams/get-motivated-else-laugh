@@ -63,18 +63,19 @@ header {
   transition: background-color 0.5s;
 }
 
-.motivate-quotes:active,
-.dad-jokes:active {
-  outline: none;
-  border: none;
-  background-color: gold;
-  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.6);
-}
-
 .motivate-quotes:hover,
 .dad-jokes:hover {
   cursor: pointer;
   background-color: #a6a6a6;
+}
+
+.motivate-quotes:active,
+.dad-jokes:active {
+  outline: none;
+  border: none;
+  transition: background-color;
+  background-color: gold;
+  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 .navigation {
@@ -100,6 +101,7 @@ i:hover {
 }
 
 i:active {
+  transition: color;
   color: gold;
   text-shadow: -5px -5px rgba(0, 0, 0, 0.158);
 }
