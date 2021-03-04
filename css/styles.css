@@ -74,7 +74,7 @@ header {
 .motivate-quotes:hover,
 .dad-jokes:hover {
   cursor: pointer;
-  background-color: gold;
+  background-color: #a6a6a6;
 }
 
 .navigation {
@@ -96,7 +96,7 @@ i {
 
 i:hover {
   cursor: pointer;
-  color: gold;
+  color: #a6a6a6;
 }
 
 i:active {
