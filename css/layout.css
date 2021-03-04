@@ -174,12 +174,13 @@
   }
 
   main > .quotes-or-jokes {
-    width: 285px;
+    width: 280px;
     margin: auto;
   }
 
   main > .favorited-texts {
-    width: 285px;
+    width: 280px;
+    height: 310px;
     margin: auto;
     margin-top: 0.5rem;
   }
