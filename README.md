@@ -1,6 +1,6 @@
 # Get Motivated else Laugh
 
-A dynamic HTML, CSS, and JavaScript solo project.
+A dynamic HTML, CSS, and JavaScript solo project that allows users to view and favorite generated Motivational Quotes and/or Dad Jokes!
 
 ## Technologies Used
 
