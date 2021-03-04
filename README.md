@@ -8,21 +8,20 @@ A dynamic HTML, CSS, and JavaScript solo project.
 - CSS3
 - JavaScript
 - jSON
-- API
+- HTTPie
 
 ## Live Demo
 
 https://osadams.github.io/ajax-project/
 
+## Current Features
 
-This project enables users to view Motivational Quotes or Dad Jokes. 
+- Users can view a home screen that allows them to generate Motivational Quotes or Dad Jokes
+- Users can view Motivational Quotes or Dad Jokes and save their favorite Quote or Joke
+- Users can view all favorited Motivational Quotes
+- Users can view all favorited Dad Jokes
 
-If a user sees a particular Quote or Joke that they like, they can favorite those particular texts!
+## Future Features
 
-When a user wants a pick-me-up or a good laugh, they are able to view their favorited Quotes or Jokes!
-
-Future features include:
-
-Being able to delete a favorited quote or joke from the users favorited list.
-
-Users can share a quote or joke with their friends.
+- Users can delete a Quote or Joke they no longer want to be saved in their favorites
+- Users can share a Quote or a Joke to social media
