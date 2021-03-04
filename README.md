@@ -1,4 +1,4 @@
-# ajax-project
+# Get Motivated else Laugh
 
 A dynamic HTML, CSS, and JavaScript solo project.
 
@@ -9,6 +9,10 @@ A dynamic HTML, CSS, and JavaScript solo project.
 - JavaScript
 - jSON
 - HTTPie
+
+## Preview
+
+![previewDisplay](https://user-images.githubusercontent.com/76730244/110040567-095df280-7d11-11eb-9984-eb4daa3b9785.gif)
 
 ## Live Demo
 
