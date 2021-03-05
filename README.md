@@ -7,7 +7,7 @@ A dynamic HTML, CSS, and JavaScript solo project that allows users to view and f
 - HTML5
 - CSS3
 - JavaScript
-- jSON
+- JSON
 - HTTPie
 
 ## Preview
