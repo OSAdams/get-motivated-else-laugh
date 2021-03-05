@@ -1,7 +1,7 @@
-gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
-gsap.from(".motivate-quotes", {duration: 0.75, opacity: 0, x: -250});
-gsap.from(".dad-jokes", {duration: 1, opacity: 0, x: -250});
-gsap.from('.fas', {duration: 1.1, opacity: 0, y: 150, stagger: 0.25});
+gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
+gsap.from(".motivate-quotes", {duration: 0.5, opacity: 0, x: -250});
+gsap.from(".dad-jokes", {duration: 0.75, opacity: 0, x: -250});
+gsap.from('.fas', {duration: 0.5, opacity: 0, y: 100, stagger: 0.25});
 
 var $motivateButton = document.querySelector('#motivate-quotes');
 var $laughButton = document.querySelector('#dad-jokes');
@@ -33,7 +33,7 @@ getJokes();
 
 $motivateButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($textContainer, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
     }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
@@ -78,7 +78,7 @@ function getQuote () {
 
 $laughButton.addEventListener('click', function(event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($textContainer, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
   }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
@@ -93,6 +93,7 @@ $laughButton.addEventListener('click', function(event) {
   $jokeId.innerHTML = '';
   var $liJokeText = document.createElement('li');
   $liJokeText.setAttribute('id', 'joke-value');
+  $liJokeText.setAttribute('class', 'joke-styling')
   $liJokeText.textContent = jokesValue;
   $jokeId.appendChild($liJokeText);
   getJokes();
@@ -113,18 +114,18 @@ $home.addEventListener('click', function(event) {
   $logo.setAttribute('class', 'logo');
   $logoImg.setAttribute('class', 'logo-image');
   if ($logo.getAttribute('class') === 'logo hidden') {
-    gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
   }
   if ($buttons.getAttribute('class') === 'buttons hidden') {
-    gsap.from('.motivate-quotes', {duration: 0.75, opacity: 0, x: -250});
-    gsap.from('.dad-jokes', {duration: 1, opacity: 0, x: -250});
+    gsap.from('.motivate-quotes', {duration: 0.5, opacity: 0, x: -250});
+    gsap.from('.dad-jokes', {duration: 0.75, opacity: 0, x: -250});
   }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
     $hdBot.textContent = 'else Laugh';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts hidden');
-  gsap.from('.logo-image', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+  gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
   $logoImgTwo.setAttribute('class', 'logo-image-two hidden');
   $buttons.setAttribute('class', 'buttons');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
@@ -134,7 +135,7 @@ $home.addEventListener('click', function(event) {
 
 $savedQuotes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
-    gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($favoritedTexts, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
   }
   if ($hdBot.textcontent !== 'Quotes') {
     $hdTop.textContent = 'Favorited';
@@ -146,7 +147,7 @@ $savedQuotes.addEventListener('click', function (event) {
   $logoImg.setAttribute('class', 'logo-image hidden');
   } else if (screen.width > 600) {
     if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
-    gsap.from('.logo-image-two', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+    gsap.from('.logo-image-two', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
     }
     $logo.setAttribute('class', 'logo');
     $logoImg.setAttribute('class','logo-image hidden');
@@ -165,7 +166,7 @@ $savedQuotes.addEventListener('click', function (event) {
 
 $savedJokes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
-    gsap.from($favoritedTexts, {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($favoritedTexts, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
   }
   if ($hdBot.textContent !== 'Jokes') {
     $hdTop.textContent = 'Favorited';
@@ -177,7 +178,7 @@ $savedJokes.addEventListener('click', function (event) {
   $logoImg.setAttribute('class', 'logo-image hidden');
   } else if (screen.width > 600) {
     if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
-    gsap.from('.logo-image-two', {duration: 1.5, opacity: 0, scale: 0.3, ease: 'back'})
+    gsap.from('.logo-image-two', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
     }
     $logo.setAttribute('class', 'logo');
     $logoImg.setAttribute('class', 'logo-image hidden');
@@ -223,6 +224,7 @@ $jokeSave.addEventListener('click', function (event) {
 function postJokes () {
   for (var i = 0; i < jokeData.length; i++) {
     var $liJoke = document.createElement('li');
+    $liJoke.setAttribute('class', 'joke-styling');
     $liJoke.textContent = jokeData[i];
     $favoriteJokes.appendChild($liJoke);
   }
@@ -234,6 +236,7 @@ function postQuotes () {
     $liTextValue.textContent = quoteData[i].quote;
     $favoriteQuotes.appendChild($liTextValue);
     var $liAuthorValue = document.createElement('li');
+    $liAuthorValue.setAttribute('class', 'quote-author-value');
     $liAuthorValue.textContent = quoteData[i].author;
     $favoriteQuotes.appendChild($liAuthorValue);
   }
