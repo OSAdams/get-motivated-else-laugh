@@ -93,6 +93,7 @@ $laughButton.addEventListener('click', function(event) {
   $jokeId.innerHTML = '';
   var $liJokeText = document.createElement('li');
   $liJokeText.setAttribute('id', 'joke-value');
+  $liJokeText.setAttribute('class', 'joke-styling')
   $liJokeText.textContent = jokesValue;
   $jokeId.appendChild($liJokeText);
   getJokes();
@@ -223,6 +224,7 @@ $jokeSave.addEventListener('click', function (event) {
 function postJokes () {
   for (var i = 0; i < jokeData.length; i++) {
     var $liJoke = document.createElement('li');
+    $liJoke.setAttribute('class', 'joke-styling');
     $liJoke.textContent = jokeData[i];
     $favoriteJokes.appendChild($liJoke);
   }
@@ -234,6 +236,7 @@ function postQuotes () {
     $liTextValue.textContent = quoteData[i].quote;
     $favoriteQuotes.appendChild($liTextValue);
     var $liAuthorValue = document.createElement('li');
+    $liAuthorValue.setAttribute('class', 'quote-author-value');
     $liAuthorValue.textContent = quoteData[i].author;
     $favoriteQuotes.appendChild($liAuthorValue);
   }

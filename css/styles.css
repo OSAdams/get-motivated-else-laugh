@@ -160,3 +160,16 @@ li {
   margin: auto;
   align-self: center;
 }
+
+.hd-bot {
+  font-size: 20px;
+}
+
+.quote-author-value {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.joke-styling {
+  margin-bottom: 1rem;
+}
