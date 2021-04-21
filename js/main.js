@@ -1,7 +1,7 @@
-gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
-gsap.from(".motivate-quotes", {duration: 0.5, opacity: 0, x: -250});
-gsap.from(".dad-jokes", {duration: 0.75, opacity: 0, x: -250});
-gsap.from('.fas', {duration: 0.5, opacity: 0, y: 100, stagger: 0.25});
+gsap.from('.logo-image', { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
+gsap.from('.motivate-quotes', { duration: 0.5, opacity: 0, x: -250 });
+gsap.from('.dad-jokes', { duration: 0.75, opacity: 0, x: -250 });
+gsap.from('.fas', { duration: 0.5, opacity: 0, y: 100, stagger: 0.25 });
 
 var $motivateButton = document.querySelector('#motivate-quotes');
 var $laughButton = document.querySelector('#dad-jokes');
@@ -31,10 +31,10 @@ var jokesValue = null;
 getQuote();
 getJokes();
 
-$motivateButton.addEventListener('click', function(event) {
+$motivateButton.addEventListener('click', function (event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
-    }
+    gsap.from($textContainer, { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
+  }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
     $hdBot.textContent = 'else Laugh';
@@ -54,7 +54,7 @@ $motivateButton.addEventListener('click', function(event) {
   $liText.textContent = quoteText;
   $quoteId.appendChild($liText);
   var $liAuthor = document.createElement('li');
-  $liAuthor.setAttribute('class', 'quote-author-value')
+  $liAuthor.setAttribute('class', 'quote-author-value');
   if (randomQuote.author == null) {
     quoteAuthor = '- Anonymous';
   } else {
@@ -64,7 +64,7 @@ $motivateButton.addEventListener('click', function(event) {
   $quoteId.appendChild($liAuthor);
 });
 
-function getQuote () {
+function getQuote() {
   $loadingModal.setAttribute('class', 'modal');
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://type.fit/api/quotes');
@@ -72,13 +72,13 @@ function getQuote () {
   xhr.addEventListener('load', function () {
     $loadingModal.setAttribute('class', 'modal hidden');
     quotesArray = xhr.response;
-    });
+  });
   xhr.send();
-};
+}
 
-$laughButton.addEventListener('click', function(event) {
+$laughButton.addEventListener('click', function (event) {
   if ($logo.getAttribute('class') === 'logo') {
-    gsap.from($textContainer, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($textContainer, { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
   }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
@@ -93,39 +93,39 @@ $laughButton.addEventListener('click', function(event) {
   $jokeId.innerHTML = '';
   var $liJokeText = document.createElement('li');
   $liJokeText.setAttribute('id', 'joke-value');
-  $liJokeText.setAttribute('class', 'joke-styling')
+  $liJokeText.setAttribute('class', 'joke-styling');
   $liJokeText.textContent = jokesValue;
   $jokeId.appendChild($liJokeText);
   getJokes();
 });
 
-function getJokes () {
+function getJokes() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://icanhazdadjoke.com/');
   xhr.setRequestHeader('Accept', 'application/json');
   xhr.responseType = 'json';
-  xhr.addEventListener('load', function() {
+  xhr.addEventListener('load', function () {
     jokesValue = xhr.response.joke;
   });
   xhr.send();
 }
 
-$home.addEventListener('click', function(event) {
+$home.addEventListener('click', function (event) {
   $logo.setAttribute('class', 'logo');
   $logoImg.setAttribute('class', 'logo-image');
   if ($logo.getAttribute('class') === 'logo hidden') {
-    gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from('.logo-image', { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
   }
   if ($buttons.getAttribute('class') === 'buttons hidden') {
-    gsap.from('.motivate-quotes', {duration: 0.5, opacity: 0, x: -250});
-    gsap.from('.dad-jokes', {duration: 0.75, opacity: 0, x: -250});
+    gsap.from('.motivate-quotes', { duration: 0.5, opacity: 0, x: -250 });
+    gsap.from('.dad-jokes', { duration: 0.75, opacity: 0, x: -250 });
   }
   if ($hdTop.textContent !== 'Get Motivated' && $hdBot.textContent !== 'else Laugh') {
     $hdTop.textContent = 'Get Motivated';
     $hdBot.textContent = 'else Laugh';
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts hidden');
-  gsap.from('.logo-image', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
+  gsap.from('.logo-image', { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
   $logoImgTwo.setAttribute('class', 'logo-image-two hidden');
   $buttons.setAttribute('class', 'buttons');
   $textContainer.setAttribute('class', 'quotes-or-jokes hidden');
@@ -135,7 +135,7 @@ $home.addEventListener('click', function(event) {
 
 $savedQuotes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
-    gsap.from($favoritedTexts, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($favoritedTexts, { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
   }
   if ($hdBot.textcontent !== 'Quotes') {
     $hdTop.textContent = 'Favorited';
@@ -143,14 +143,14 @@ $savedQuotes.addEventListener('click', function (event) {
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts');
   if (screen.width < 600) {
-  $logo.setAttribute('class', 'logo hidden');
-  $logoImg.setAttribute('class', 'logo-image hidden');
+    $logo.setAttribute('class', 'logo hidden');
+    $logoImg.setAttribute('class', 'logo-image hidden');
   } else if (screen.width > 600) {
     if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
-    gsap.from('.logo-image-two', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
+      gsap.from('.logo-image-two', { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
     }
     $logo.setAttribute('class', 'logo');
-    $logoImg.setAttribute('class','logo-image hidden');
+    $logoImg.setAttribute('class', 'logo-image hidden');
     $logoImgTwo.setAttribute('class', 'logo-image-two');
   }
   if (screen.width > 800) {
@@ -166,7 +166,7 @@ $savedQuotes.addEventListener('click', function (event) {
 
 $savedJokes.addEventListener('click', function (event) {
   if ($favoritedTexts.getAttribute('class') === 'favorited-texts hidden') {
-    gsap.from($favoritedTexts, {duration: 1, opacity: 0, scale: 0.3, ease: 'back'});
+    gsap.from($favoritedTexts, { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
   }
   if ($hdBot.textContent !== 'Jokes') {
     $hdTop.textContent = 'Favorited';
@@ -174,11 +174,11 @@ $savedJokes.addEventListener('click', function (event) {
   }
   $favoritedTexts.setAttribute('class', 'favorited-texts');
   if (screen.width < 600) {
-  $logo.setAttribute('class', 'logo hidden');
-  $logoImg.setAttribute('class', 'logo-image hidden');
+    $logo.setAttribute('class', 'logo hidden');
+    $logoImg.setAttribute('class', 'logo-image hidden');
   } else if (screen.width > 600) {
     if ($logoImgTwo.getAttribute('class') === 'logo-image-two hidden') {
-    gsap.from('.logo-image-two', {duration: 1, opacity: 0, scale: 0.3, ease: 'back'})
+      gsap.from('.logo-image-two', { duration: 1, opacity: 0, scale: 0.3, ease: 'back' });
     }
     $logo.setAttribute('class', 'logo');
     $logoImg.setAttribute('class', 'logo-image hidden');
@@ -204,8 +204,8 @@ $quoteSave.addEventListener('click', function (event) {
     }
   }
   quoteData.push({
-    'quote': quoteText.textContent,
-    'author': quoteAuthor.textContent
+    quote: quoteText.textContent,
+    author: quoteAuthor.textContent
   });
 });
 
@@ -221,7 +221,7 @@ $jokeSave.addEventListener('click', function (event) {
   jokeData.push($jokeText.textContent);
 });
 
-function postJokes () {
+function postJokes() {
   for (var i = 0; i < jokeData.length; i++) {
     var $liJoke = document.createElement('li');
     $liJoke.setAttribute('class', 'joke-styling');
@@ -230,7 +230,7 @@ function postJokes () {
   }
 }
 
-function postQuotes () {
+function postQuotes() {
   for (var i = 0; i < quoteData.length; i++) {
     var $liTextValue = document.createElement('li');
     $liTextValue.textContent = quoteData[i].quote;
@@ -240,4 +240,4 @@ function postQuotes () {
     $liAuthorValue.textContent = quoteData[i].author;
     $favoriteQuotes.appendChild($liAuthorValue);
   }
-};
+}
