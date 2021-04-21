@@ -18,7 +18,6 @@ var $savedJokes = document.querySelector('#saved-jokes');
 var $quoteSave = document.querySelector('#quote-save');
 var $jokeSave = document.querySelector('#joke-save');
 var $buttons = document.querySelector('#buttons');
-var $headerText = document.querySelector('#header-text');
 var $hdTop = document.querySelector('#hd-top');
 var $hdBot = document.querySelector('#hd-bot');
 var $logoImg = document.querySelector('#logo-image');
