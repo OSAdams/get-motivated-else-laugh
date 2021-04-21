@@ -211,8 +211,6 @@ $quoteSave.addEventListener('click', function (event) {
 $jokeSave.addEventListener('click', function (event) {
   var $jokeText = document.querySelector('#joke-value');
   for (var x = 0; x < jokeData.length; x++) {
-    console.log($jokeText.textContent);
-    console.log(jokeData[x]);
     if ($jokeText.textContent === jokeData[x]) {
       return;
     }
