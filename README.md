@@ -16,7 +16,7 @@ A dynamic HTML, CSS, and JavaScript solo project that allows users to view and f
 
 ## Live Demo
 
-https://osadams.github.io/ajax-project/
+https://osadams.github.io/get-motivated-else-laugh 
 
 ## Current Features
 
