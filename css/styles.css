@@ -96,11 +96,6 @@ i {
   transition: color 0.5s;
 }
 
-i:hover {
-  cursor: pointer;
-  color: #a6a6a6;
-}
-
 i:active {
   transition: color;
   color: gold;
@@ -194,4 +189,9 @@ li {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+i:hover {
+  cursor: pointer;
+  color: #a6a6a6;
 }

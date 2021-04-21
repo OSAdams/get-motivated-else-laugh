@@ -206,6 +206,7 @@ $quoteSave.addEventListener('click', function (event) {
     quote: quoteText.textContent,
     author: quoteAuthor.textContent
   });
+  $quoteSave.setAttribute('class', 'fas fa-star save');
 });
 
 $jokeSave.addEventListener('click', function (event) {
@@ -216,6 +217,7 @@ $jokeSave.addEventListener('click', function (event) {
     }
   }
   jokeData.push($jokeText.textContent);
+  $jokeSave.setAttribute('class', 'fas fa-star save');
 });
 
 function postJokes() {
