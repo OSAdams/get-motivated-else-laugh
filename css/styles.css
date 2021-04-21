@@ -96,6 +96,11 @@ i {
   transition: color 0.5s;
 }
 
+i:hover {
+  cursor: pointer;
+  color: #a6a6a6;
+}
+
 i:active {
   transition: color;
   color: gold;
@@ -191,7 +196,6 @@ li {
   text-align: center;
 }
 
-i:hover {
-  cursor: pointer;
-  color: #a6a6a6;
+.save {
+  color: gold !important;
 }

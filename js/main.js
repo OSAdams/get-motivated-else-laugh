@@ -61,6 +61,7 @@ $motivateButton.addEventListener('click', function (event) {
   }
   $liAuthor.textContent = quoteAuthor;
   $quoteId.appendChild($liAuthor);
+  $quoteSave.setAttribute('class', 'fas fa-star');
 });
 
 function getQuote() {
@@ -95,6 +96,7 @@ $laughButton.addEventListener('click', function (event) {
   $liJokeText.setAttribute('class', 'joke-styling');
   $liJokeText.textContent = jokesValue;
   $jokeId.appendChild($liJokeText);
+  $jokeSave.setAttribute('class', 'fas fa-star');
   getJokes();
 });
 
