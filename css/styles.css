@@ -175,3 +175,27 @@ li {
 .joke-styling {
   margin-bottom: 1rem;
 }
+
+.nav-icon-col {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-text {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: #F5F5F5;
+  text-align: center;
+}
+
+.icon-text > p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.save {
+  color: gold !important;
+}
